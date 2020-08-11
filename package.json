@@ -1,0 +1,24 @@
+{
+  "name": "starter-kit",
+  "version": "1.0.0",
+  "description": "react-starter-kit",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack --mode=development",
+    "build": "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AkhmerovM/starter-kit.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AkhmerovM/starter-kit/issues"
+  },
+  "homepage": "https://github.com/AkhmerovM/starter-kit#readme",
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
