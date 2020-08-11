@@ -1,4 +1,6 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
 const paths = {
     build: path.resolve(__dirname, 'dist'),
@@ -15,4 +17,15 @@ module.exports = {
     resolve: {
         modules: ['node_modules', paths.src]
     },
+    devServer: {
+        contentBase: paths.build,
+        compress: true,
+        port: 9000,
+        writeToDisk: true,
+    },
+    plugins: [
+        new CleanWebpackPlugin(),
+        new HtmlWebpackPlugin({title: "Webpack App"})
+    ]
+
 }
