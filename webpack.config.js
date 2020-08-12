@@ -24,7 +24,7 @@ module.exports = {
     devtool: 'source-map',
     watch: isDev,
     resolve: {
-        extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['*', '.js', '.jsx'],
         modules: [paths.src, 'node_modules']
     },
     devServer: {
@@ -35,8 +35,7 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({title: "Webpack App"})
+        new HtmlWebpackPlugin({title: "Webpack App", template: path.join(paths.src, './index.html')})
     ]
 
 };
-console.log(path.resolve(__dirname, 'node_modules'));

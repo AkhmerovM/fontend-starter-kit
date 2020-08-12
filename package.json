@@ -5,7 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
-    "build": "webpack-dev-server --mode=production"
+    "build": "webpack-dev-server --mode=production",
+    "flow": "flow"
   },
   "repository": {
     "type": "git",
@@ -20,15 +21,23 @@
   "devDependencies": {
     "@babel/core": "7.11.0",
     "@babel/preset-env": "^7.11.0",
+    "@babel/preset-flow": "^7.10.4",
+    "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
     "css-loader": "^4.2.1",
+    "flow-bin": "^0.131.0",
     "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.2.0",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-redux": "^7.2.1",
+    "redux-thunk": "^2.3.0"
+  }
 }
