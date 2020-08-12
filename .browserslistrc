@@ -1,0 +1,10 @@
+# Browsers that we support
+
+# You can see what browsers were selected by your queries by running:
+# npx browserslist
+
+last 3 chrome version
+last 3 firefox version
+last 3 edge version
+last 3 safari version
+IE 11
