@@ -1,6 +1,8 @@
 // @flow
+import React from 'react';
+import * as css from './style.css';
+import {Page} from "./modules/main/components/Page";
+
 export function App() {
-    const a: string = 'Hello';
-    const name: string = 'world'
-    return `${a} ${name}`;
+    return <Page />
 }
