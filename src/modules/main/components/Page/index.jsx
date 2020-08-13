@@ -1,6 +1,11 @@
 import styles  from './style.local.less';
 import React from 'react';
+import { ReactComponent as SmileIcon } from 'app/icons/smile.svg';
+import nature from 'app/images/nature.jpg';
 
 export function Page() {
-    return <div className={styles.page}>Page</div>
+    return <div className={styles.page}>
+        <SmileIcon className={styles.icon} />
+        <img src={nature} alt='nature' />
+    </div>
 }

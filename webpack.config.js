@@ -6,7 +6,6 @@ const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
 const paths = {
@@ -24,6 +23,16 @@ const cssLoader = {
 }
 const lessLoader = {
     loader: 'less-loader'
+}
+const SvgrWebpackLoader = {
+    loader: '@svgr/webpack',
+    options: {
+        svgoConfig: {
+            plugins: {
+                removeViewBox: false
+            }
+        }
+    }
 }
 module.exports = {
     context: paths.src,
@@ -54,7 +63,22 @@ module.exports = {
                 test: /\.local\.less/u,
                 use: [styleLoader, cssModuleLoader, lessLoader]
             },
-            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" }
+            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" },
+            {
+                test: /\.svg$/,
+                use: [SvgrWebpackLoader, 'url-loader'],
+            },
+            {
+                test: /\.(png|jpeg|jpg|gif)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: path.join('images', '[hash:10].[name].[ext]'),
+                        },
+                    },
+                ],
+            },
         ]
     },
     devtool: 'source-map',
@@ -91,3 +115,5 @@ module.exports = {
    },
 
 };
+console.log('=========================');
+console.log(path.join(paths.build, '/images'));
