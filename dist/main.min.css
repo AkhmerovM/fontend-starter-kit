@@ -11,6 +11,14 @@ body {
   display: flex;
 }
 
+@font-face {
+  font-display: swap;
+  font-family: "ubuntuRegular";
+  font-style: 'normal';
+  font-weight: 400;
+  src: url(fonts/d03ee0b638.ubuntu-regular.eot);
+  src: url(fonts/d03ee0b638.ubuntu-regular.eot?#iefix) format('embedded-opentype'), url(fonts/9d1e78b26e.ubuntu-regular.woff2) format('woff2'), url(fonts/f7c0196e4a.ubuntu-regular.woff) format('woff'), url(fonts/fbdecfce69.ubuntu-regular.ttf) format('truetype');
+}
 .kCw8tWhumsYQjU_nah4WJ {
   background-color: #aeaeea;
   padding: 32px;
@@ -20,7 +28,18 @@ body {
   width: 200px;
   height: 200px;
 }
+._3D6Tt0TxOTvfa9g-6t-s3W {
+  font-family: "ubuntuRegular", sans-serif;
+}
 
+@font-face {
+  font-display: swap;
+  font-family: "ubuntuRegular";
+  font-style: 'normal';
+  font-weight: 400;
+  src: url(fonts/d03ee0b638.ubuntu-regular.eot);
+  src: url(fonts/d03ee0b638.ubuntu-regular.eot?#iefix) format('embedded-opentype'), url(fonts/9d1e78b26e.ubuntu-regular.woff2) format('woff2'), url(fonts/f7c0196e4a.ubuntu-regular.woff) format('woff'), url(fonts/fbdecfce69.ubuntu-regular.ttf) format('truetype');
+}
 
 
 /*# sourceMappingURL=main.min.css.map*/

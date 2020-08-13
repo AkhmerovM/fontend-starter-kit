@@ -5,6 +5,7 @@ import nature from 'app/images/nature.jpg';
 
 export function Page() {
     return <div className={styles.page}>
+        <div className={styles.main}>Title page</div>
         <SmileIcon className={styles.icon} />
         <img src={nature} alt='nature' />
     </div>

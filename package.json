@@ -1,23 +1,32 @@
 {
-  "name": "starter-kit",
+  "name": "react-starter-kit",
   "version": "1.0.0",
   "description": "react-starter-kit",
   "main": "src/index.js",
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack-dev-server --mode=production",
-    "flow": "flow"
+    "flow": "flow",
+    "analyze": "better-npm-run analize"
+  },
+  "betterScripts": {
+    "analyze": {
+      "command": "webpack-dev-server --mode=development",
+      "env": {
+        "ANALYZE": "true"
+      }
+    }
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AkhmerovM/starter-kit.git"
+    "url": "git+https://github.com/AkhmerovM/react-starter-kit.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AkhmerovM/starter-kit/issues"
+    "url": "https://github.com/AkhmerovM/react-starter-kit/issues"
   },
-  "homepage": "https://github.com/AkhmerovM/starter-kit#readme",
+  "homepage": "https://github.com/AkhmerovM/react-starter-kit#readme",
   "devDependencies": {
     "@babel/core": "7.11.0",
     "@babel/preset-env": "^7.11.0",
@@ -25,6 +34,7 @@
     "@babel/preset-react": "^7.10.4",
     "@svgr/webpack": "^5.4.0",
     "babel-loader": "^8.1.0",
+    "better-npm-run": "^0.1.1",
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
     "css-loader": "^4.2.1",

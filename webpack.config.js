@@ -8,6 +8,8 @@ const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const isDev = process.env.NODE_ENV === 'development';
 const isProd = process.env.NODE_ENV === 'production';
+const isAnalyze = process.env.ANALYZE === 'true';
+
 const paths = {
     build: path.resolve(__dirname, 'dist'),
     src: path.resolve(__dirname, 'src'),
@@ -79,6 +81,18 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.(woff(2)?|ttf|eot|svg)$/u,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[hash:10].[name].[ext]',
+                            outputPath: 'fonts/'
+                        }
+                    }
+                ]
+            }
         ]
     },
     devtool: 'source-map',
@@ -97,8 +111,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({title: "Webpack App", template: path.join(paths.src, './index.html')}),
         new MiniCssExtractPlugin({filename: '[name].min.css'}),
-        // new BundleAnalyzerPlugin()
-    ],
+    ].concat(isAnalyze ? new BundleAnalyzerPlugin() : []),
     optimization: {
         minimize: isProd,
         minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
@@ -115,5 +128,3 @@ module.exports = {
    },
 
 };
-console.log('=========================');
-console.log(path.join(paths.build, '/images'));
