@@ -16,14 +16,14 @@ const paths = {
 const styleLoader = {
     loader: isProd ? 'style-loader' : MiniCssExtractPlugin.loader
 }
-// const cssModuleLoader = {
-//     loader: 'css-loader', options: {modules: false}
-// }
-// const miniCssExtractLoader = {
-//     loader: 'css-loader', options: {modules: false}
-// }
+const cssModuleLoader = {
+    loader: 'css-loader', options: {modules: true}
+}
 const cssLoader = {
     loader: 'css-loader', options: {modules: false}
+}
+const lessLoader = {
+    loader: 'less-loader'
 }
 module.exports = {
     context: paths.src,
@@ -36,12 +36,24 @@ module.exports = {
     },
     module:  {
         rules: [
-            // { test: /\.css$/, use: ['style-loader', 'css-loader'] },
             {
-                test: /\.css$/,
+                exclude: /\.local\.css/u,
+                test: /\.css$/u,
                 use: [styleLoader, cssLoader]
             },
-            // { test: /\.less$/, use: ['css-loader', 'less-loader'] },
+            {
+                test: /\.local\.css/u,
+                use: [styleLoader, cssModuleLoader]
+            },
+            {
+                exclude: /\.local\.less$/u,
+                test: /\.less$/u,
+                use: [styleLoader, cssLoader, lessLoader]
+            },
+            {
+                test: /\.local\.less/u,
+                use: [styleLoader, cssModuleLoader, lessLoader]
+            },
             { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" }
         ]
     },
