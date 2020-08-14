@@ -1,8 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const TerserJSPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
@@ -13,59 +13,62 @@ const isAnalyze = process.env.ANALYZE === 'true';
 const paths = {
     build: path.resolve(__dirname, 'dist'),
     src: path.resolve(__dirname, 'src'),
-}
+};
 const styleLoader = {
-    loader: isProd ? 'style-loader' : MiniCssExtractPlugin.loader
-}
+    loader: isProd ? 'style-loader' : MiniCssExtractPlugin.loader,
+};
 const cssModuleLoader = {
-    loader: 'css-loader', options: {modules: true}
-}
+    loader: 'css-loader', options: { modules: true },
+};
 const cssLoader = {
-    loader: 'css-loader', options: {modules: false}
-}
+    loader: 'css-loader', options: { modules: false },
+};
+const postCssLoader = {
+    loader: 'postcss-loader',
+};
 const lessLoader = {
-    loader: 'less-loader'
-}
+    loader: 'less-loader',
+};
 const SvgrWebpackLoader = {
     loader: '@svgr/webpack',
     options: {
         svgoConfig: {
             plugins: {
-                removeViewBox: false
-            }
-        }
-    }
-}
+                removeViewBox: false,
+            },
+        },
+    },
+};
 module.exports = {
     context: paths.src,
-    entry:  {
-        main: './index.js',
+    entry: {
+        main: './index.jsx',
     },
     output: {
         path: paths.build,
-        filename: "[name].min.js"
+        filename: '[name].min.js',
     },
-    module:  {
+    module: {
         rules: [
             {
                 exclude: /\.local\.css/u,
                 test: /\.css$/u,
-                use: [styleLoader, cssLoader]
+                use: [styleLoader, cssLoader, postCssLoader],
             },
             {
                 test: /\.local\.css/u,
-                use: [styleLoader, cssModuleLoader]
+                use: [styleLoader, cssModuleLoader, postCssLoader],
             },
             {
                 exclude: /\.local\.less$/u,
                 test: /\.less$/u,
-                use: [styleLoader, cssLoader, lessLoader]
+                use: [styleLoader, cssLoader, postCssLoader, lessLoader],
             },
             {
                 test: /\.local\.less/u,
-                use: [styleLoader, cssModuleLoader, lessLoader]
+                use: [styleLoader, cssModuleLoader, postCssLoader, lessLoader],
             },
-            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: "babel-loader" },
+            { test: /\.(js|jsx)$/, exclude: /node_modules/, loader: 'babel-loader' },
             {
                 test: /\.svg$/,
                 use: [SvgrWebpackLoader, 'url-loader'],
@@ -88,18 +91,18 @@ module.exports = {
                         loader: 'file-loader',
                         options: {
                             name: '[hash:10].[name].[ext]',
-                            outputPath: 'fonts/'
-                        }
-                    }
-                ]
-            }
-        ]
+                            outputPath: 'fonts/',
+                        },
+                    },
+                ],
+            },
+        ],
     },
     devtool: 'source-map',
     watch: isDev,
     resolve: {
         extensions: ['*', '.js', '.jsx'],
-        modules: [paths.src, 'node_modules']
+        modules: [paths.src, 'node_modules'],
     },
     devServer: {
         contentBase: paths.build,
@@ -109,8 +112,8 @@ module.exports = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin({title: "Webpack App", template: path.join(paths.src, './index.html')}),
-        new MiniCssExtractPlugin({filename: '[name].min.css'}),
+        new HtmlWebpackPlugin({ title: 'Webpack App', template: path.join(paths.src, './index.html') }),
+        new MiniCssExtractPlugin({ filename: '[name].min.css' }),
     ].concat(isAnalyze ? new BundleAnalyzerPlugin() : []),
     optimization: {
         minimize: isProd,
@@ -121,10 +124,10 @@ module.exports = {
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendors',
-                    chunks: 'all'
-                }
-            }
+                    chunks: 'all',
+                },
+            },
         },
-   },
+    },
 
 };

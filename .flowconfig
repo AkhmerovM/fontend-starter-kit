@@ -1,11 +1,22 @@
 [ignore]
 /node_modules
 [include]
+src
 
 [libs]
 
 [lints]
 
 [options]
+module.file_ext=.css
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.less
+
+# absolute imports
+module.name_mapper='^app\(.*\)$' -> '<PROJECT_ROOT>/src/app/\1'
+module.name_mapper='^modules\(.*\)$' -> '<PROJECT_ROOT>/src/modules/\1'
+module.name_mapper='^types\(.*\)$' -> '<PROJECT_ROOT>/src/types/\1'
+module.name_mapper='^styles\(.*\)$' -> '<PROJECT_ROOT>/src/styles/\1'
 
 [strict]

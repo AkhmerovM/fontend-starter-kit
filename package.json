@@ -2,12 +2,13 @@
   "name": "react-starter-kit",
   "version": "1.0.0",
   "description": "react-starter-kit",
-  "main": "src/index.js",
+  "main": "src/index.jsx",
   "scripts": {
     "dev": "webpack-dev-server --mode=development",
     "build": "webpack-dev-server --mode=production",
     "flow": "flow",
-    "analyze": "better-npm-run analize"
+    "analyze": "better-npm-run analyze",
+    "eslint": "eslint --fix /src"
   },
   "betterScripts": {
     "analyze": {
@@ -38,12 +39,21 @@
     "clean-webpack-plugin": "^3.0.0",
     "core-js": "^3.6.5",
     "css-loader": "^4.2.1",
+    "eslint": "^7.6.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.20.6",
+    "eslint-plugin-react-hooks": "^4.0.8",
     "file-loader": "^6.0.0",
     "flow-bin": "^0.131.0",
+    "flow-typed": "^3.2.1",
     "html-webpack-plugin": "^4.3.0",
     "less-loader": "^6.2.0",
     "mini-css-extract-plugin": "^0.10.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^3.0.0",
     "style-loader": "^1.2.1",
     "terser-webpack-plugin": "^4.1.0",
     "url-loader": "^4.1.0",
@@ -56,6 +66,8 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "cssnano": "^4.1.10",
+    "autoprefixer": "^9.8.6"
   }
 }
