@@ -5,6 +5,7 @@ module.exports = {
     },
     extends: [
         'plugin:react/recommended',
+        'plugin:flowtype/recommended',
         'airbnb',
     ],
     parserOptions: {
@@ -16,11 +17,12 @@ module.exports = {
     },
     plugins: [
         'react',
+        'flowtype',
     ],
     rules: {
         indent: ['error', 4],
         'import/prefer-default-export': 0,
-        "global-require": 0,
+        'global-require': 0,
         'react/jsx-indent': ['error', 4],
     },
     settings: {

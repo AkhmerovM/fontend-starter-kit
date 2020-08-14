@@ -101,12 +101,13 @@ module.exports = {
     devtool: 'source-map',
     watch: isDev,
     resolve: {
-        extensions: ['*', '.js', '.jsx'],
+        extensions: ['.jsx', '.js', '*'],
         modules: [paths.src, 'node_modules'],
     },
     devServer: {
         contentBase: paths.build,
         compress: true,
+        historyApiFallback: true,
         port: 9000,
         writeToDisk: true,
     },

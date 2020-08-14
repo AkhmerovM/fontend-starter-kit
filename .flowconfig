@@ -19,4 +19,9 @@ module.name_mapper='^modules\(.*\)$' -> '<PROJECT_ROOT>/src/modules/\1'
 module.name_mapper='^types\(.*\)$' -> '<PROJECT_ROOT>/src/types/\1'
 module.name_mapper='^styles\(.*\)$' -> '<PROJECT_ROOT>/src/styles/\1'
 
+
+# webpack loaders
+module.name_mapper='.*\.\(css\|less\)$' -> '<PROJECT_ROOT>/src/app/types/stubs/css-modules.js'
+module.name_mapper='.*\.\(png\|jpg\)$' -> '<PROJECT_ROOT>/app/src/types/stubs/url-loader.js'
+module.name_mapper.extension='svg' -> '<PROJECT_ROOT>/src/app/types/stubs/svg-loader.js'
 [strict]
