@@ -1,15 +1,15 @@
 .font-face(@title, @name, @path, @weight, @style) {
-  @eot: url('@{path}@{name}.eot?#iefix') format('embedded-opentype');
-  @woff2: url('@{path}@{name}.woff2') format('woff2');
-  @woff: url('@{path}@{name}.woff') format('woff');
-  @ttf: url('@{path}@{name}.ttf') format('truetype');
+    @eot: url('@{path}@{name}.eot?#iefix') format('embedded-opentype');
+    @woff2: url('@{path}@{name}.woff2') format('woff2');
+    @woff: url('@{path}@{name}.woff') format('woff');
+    @ttf: url('@{path}@{name}.ttf') format('truetype');
 
-  @font-face {
-  font-display: swap;
-  font-family: @title;
-  font-style: @style;
-  font-weight: @weight;
-  src: url('@{path}@{name}.eot');
-  src: @eot, @woff2, @woff, @ttf;
-}
+    @font-face {
+        font-display: swap;
+        font-family: @title;
+        font-style: @style;
+        font-weight: @weight;
+        src: url('@{path}@{name}.eot');
+        src: @eot, @woff2, @woff, @ttf;
+    }
 }

@@ -1,0 +1,41 @@
+@size-xs-min: 0;
+@size-sm-min: 640px;
+@size-md-min: 768px;
+@size-lg-min: 1024px;
+@size-l-min: 1280px;
+@size-xl-min: 1440px;
+
+@size-xs-max: (@size-sm-min - 1);
+@size-sm-max: (@size-md-min - 1);
+@size-md-max: (@size-lg-min - 1);
+@size-lg-max: (@size-l-min - 1);
+@size-l-max: (@size-xl-min - 1);
+
+// Extra small screen / phone
+@xs-min: e('(min-width: @{size-xs-min})');
+@xs-max: e('(max-width: @{size-xs-max})');
+@xs: e('@{xs-min} and @{xs-max}');
+
+// Small screen / tablet
+@sm-min: e('(min-width: @{size-sm-min})');
+@sm-max: e('(max-width: @{size-sm-max})');
+@sm: e('@{sm-min} and @{sm-max}');
+
+// medium screen / tablet
+@md-min: e('(min-width: @{size-md-min})');
+@md-max: e('(max-width: @{size-md-max})');
+@md: e('@{md-min} and @{md-max}');
+
+// Small screen / tablet
+@lg-min: e('(min-width: @{size-lg-min})');
+@lg-max: e('(max-width: @{size-lg-max})');
+@lg: e('@{lg-min} and @{lg-max}');
+
+// medium screen / desktop
+@l-min: e('(min-width: @{size-l-min})');
+@l-max: e('(max-width: @{size-l-max})');
+@l: e('@{l-min} and @{l-max}');
+
+// large screen / desktop
+@xl-min: e('(min-width: @{size-xl-min})');
+@xl: e('@{xl-min}');

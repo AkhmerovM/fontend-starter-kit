@@ -1,0 +1,29 @@
+@import "metric";
+
+.p_0 {
+    padding: 0;
+}
+.make-padding(@metric, @name) {
+    .p_@{name} {
+        padding: @metric;
+    }
+    .p-l_@{name} {
+        padding-left: @metric;
+    }
+    .p-b_@{name} {
+        padding-bottom: @metric;
+    }
+    .p-r_@{name} {
+        padding-right: @metric;
+    }
+    .p-t_@{name} {
+        padding-top: @metric;
+    }
+}
+.make-padding(@metric-xxs, xss);
+.make-padding(@metric-xs, xs);
+.make-padding(@metric-s, s);
+.make-padding(@metric-m, m);
+.make-padding(@metric-l, l);
+.make-padding(@metric-xl, xl);
+.make-padding(@metric-xxl, xxl);

@@ -1,0 +1,33 @@
+@import "metric";
+
+.m_a {
+    margin: auto;
+}
+
+.m_0 {
+    margin: 0;
+}
+.make-margin(@metric, @name) {
+    .m_@{name} {
+        margin: @metric;
+    }
+    .m-l_@{name} {
+        margin-left: @metric;
+    }
+    .m-b_@{name} {
+        margin-bottom: @metric;
+    }
+    .m-r_@{name} {
+        margin-right: @metric;
+    }
+    .m-t_@{name} {
+        margin-top: @metric;
+    }
+}
+.make-margin(@metric-xxs, xss);
+.make-margin(@metric-xs, xs);
+.make-margin(@metric-s, s);
+.make-margin(@metric-m, m);
+.make-margin(@metric-l, l);
+.make-margin(@metric-xl, xl);
+.make-margin(@metric-xxl, xxl);

@@ -1,0 +1,39 @@
+@import (reference) "adaptive";
+
+@count-columns: 12;
+@row-margin: 30px;
+@col-gap: 30px;
+
+.make-grid(@name, @i: 1) when (@i =< @count-columns) {
+    @media @@name {
+        .col-@{name}-@{i} {
+            width: (@i / @count-columns) * 100%;
+        }
+    }
+    .make-grid(@name, (@i + 1));
+}
+.make-grid(sm);
+.make-grid(xs);
+.make-grid(md);
+.make-grid(lg);
+.make-grid(l);
+.make-grid(xl);
+
+.row {
+    display: flex;
+    margin-right: -@row-margin/2;
+    margin-left: -@row-margin/2;
+
+    *[class*='col'] {
+        padding: 0 @col-gap/2;
+    }
+}
+
+.with-wrap {
+    flex-wrap: wrap;
+    margin: -@col-gap/2 -@row-margin/2 0;
+
+    *[class*='col'] {
+        padding: @col-gap/2 @col-gap/2 0;
+    }
+}

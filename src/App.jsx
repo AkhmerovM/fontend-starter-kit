@@ -1,8 +1,7 @@
 // @flow
 import React from 'react';
-import { Page } from './modules/main/components/Page';
-import './style.less';
+import { Grid } from 'modules/main/components/Grid';
 
 export function App() {
-    return <Page />;
+    return <Grid />;
 }
