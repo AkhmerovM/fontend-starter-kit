@@ -1,7 +1,12 @@
 // @flow
 import React from 'react';
-import { Grid } from 'modules/main/components/Grid';
+import { Provider } from 'react-redux';
+import { store } from './app/store';
+import { MainContainer } from './modules/main/containers/MainContainer';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export function App() {
-    return <Grid />;
+    return (
+        <Provider store={store}><MainContainer /></Provider>
+    );
 }

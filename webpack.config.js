@@ -11,7 +11,8 @@ const isProd = process.env.NODE_ENV === 'production';
 const isAnalyze = process.env.ANALYZE === 'true';
 
 const paths = {
-    build: path.resolve(__dirname, 'dist'),
+    public: path.resolve(__dirname, 'www'),
+    build: path.resolve(__dirname, 'www/build'),
     src: path.resolve(__dirname, 'src'),
 };
 const styleLoader = {
@@ -105,7 +106,7 @@ module.exports = {
         modules: [paths.src, 'node_modules'],
     },
     devServer: {
-        contentBase: paths.build,
+        contentBase: paths.public,
         compress: true,
         historyApiFallback: true,
         port: 9000,

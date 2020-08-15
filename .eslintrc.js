@@ -24,6 +24,8 @@ module.exports = {
         'import/prefer-default-export': 0,
         'global-require': 0,
         'react/jsx-indent': ['error', 4],
+        'no-underscore-dangle': 0,
+        'max-len': ['error', 200],
     },
     settings: {
         'import/resolver': {
