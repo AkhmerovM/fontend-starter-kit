@@ -28,6 +28,7 @@ $ npm run analyze
 | Stylelint | Format style code of css |
 | Prettier | Format style code of html and svg |
 | PostCss | Add autoprefixer and optimize css |
+| Husky | To run linters before commit |
 | React-bootstrap | To use styled components |
 | Anxios | To handle http actions |
 | Atomic css | Add Most popular classes for style, grid and adaptive |
