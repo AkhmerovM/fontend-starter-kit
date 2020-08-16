@@ -1,8 +1,9 @@
 # frontend-starter-kit
 starter kit for front-end web-applications
-###Main stack - React/Redux/flow
 
-###Install and Usage
+### Main stack - React/Redux/Flow
+
+### Install and Usage
 
 To install dependencies
 ```sh
@@ -21,7 +22,7 @@ To analyze bundle
 $ npm run analyze
 ```
 
-###Used features
+### Used features
 | Feature | Description |
 | ------ | ------ |
 | Eslint | Format style code of js/jsx |
@@ -31,7 +32,7 @@ $ npm run analyze
 | Husky | To run linters before commit |
 | React-bootstrap | To use styled components |
 | Anxios | To handle http actions |
-| Atomic css | Add Most popular classes for style, grid and adaptive |
+| Atomic css | Add most popular classes for style, grid and adaptive |
 | Css modules | For convenient work with style classnames |
 
 Also, you can add your images, svg and fonts. There is already add appropriate loaders.
