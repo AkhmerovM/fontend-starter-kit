@@ -35,4 +35,4 @@ $ npm run analyze
 | Atomic css | Add most popular classes for style, grid and adaptive |
 | Css modules | For convenient work with style classnames |
 
-Also, you can add your images, svg and fonts. There is already add appropriate loaders.
+Also, you can add your images, svg and fonts. There is already have added appropriate loaders.
