@@ -1,3 +1,9 @@
+.block {
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #3535e7;
+}
+
 .block1 {
     background-color: #eaa;
 }
@@ -8,4 +14,20 @@
 
 .block3 {
     background-color: #aea;
+}
+
+.block4 {
+    background-color: #ff87c6;
+}
+
+.block5 {
+    background-color: #f8cd7a;
+}
+
+.grid {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
 }
