@@ -28,7 +28,7 @@
             "eslint --fix"
         ],
         "*.{css,less}": [
-            "stylelint --fix"
+            "stylelint --fix --allow-empty-input"
         ],
         "*.{html,json}": [
             "prettier --write"
@@ -99,6 +99,7 @@
         "react-bootstrap": "^1.3.0",
         "react-dom": "^16.13.1",
         "react-redux": "^7.2.1",
+        "react-router-dom": "^5.2.0",
         "redux": "^4.0.5",
         "redux-thunk": "^2.3.0",
         "reselect": "^4.0.0"
