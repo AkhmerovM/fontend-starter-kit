@@ -48,6 +48,7 @@ module.exports = {
     output: {
         path: paths.build,
         filename: '[name].min.js',
+        publicPath: '/',
     },
     module: {
         rules: [

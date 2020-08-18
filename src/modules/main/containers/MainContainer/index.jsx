@@ -5,6 +5,7 @@ import { Grid } from 'modules/main/components/Grid';
 import cn from 'classnames';
 import { getUsers } from 'modules/main/actions';
 import { Page } from 'modules/main/components/Page';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import styles from './style.local.less';
 
 export function MainContainer() {
@@ -14,8 +15,12 @@ export function MainContainer() {
     }, []);
     return (
         <div className={cn(styles.mainContainer, 'h_full')}>
-            <Grid />
-            <Page />
+            <Router>
+                <Switch>
+                    <Route path="/" exact component={Grid} />
+                    <Route path="/main/edit" exact component={Page} />
+                </Switch>
+            </Router>
         </div>
     );
 }
