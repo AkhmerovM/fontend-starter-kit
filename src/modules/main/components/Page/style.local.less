@@ -7,10 +7,16 @@
     padding: @metric-m;
 }
 
-.icon {
-    color: beige;
-    width: 200px;
-    height: 200px;
+.input {
+    &:active,
+    &:hover,
+    &:focus {
+        box-shadow: none;
+    }
+}
+
+.error {
+    border: 1px solid red !important;
 }
 
 .main {
